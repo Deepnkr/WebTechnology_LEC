@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div><h1>xml http requst</h1>
+    <button type="button" onclick="loadXMLDoc()">Click ON</button>
+    </div>
+    <script>
+        
+        function loadXMLDoc()
+        {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200){
+                    console.log(this.response);
+                }
+            }
+            xhttp.open("GET", "http://restapi.adequateshop.com/api/Traveler?page=2", true);
+            xhttp.send();
+        }
+</script>
+</body>
+</html>
